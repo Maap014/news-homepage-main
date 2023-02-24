@@ -1,0 +1,416 @@
+/* reset styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color:hsl(36, 100%, 99%);
+    font-family: 'Inter', sans-serif;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction:column;
+}
+
+/* header */
+
+.header-title{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+}
+
+#hom{
+    font-family: 'Tai Heritage Pro', serif;
+    font-size: 35px;
+    font-weight: 700;
+
+}
+/* hambuger menu */
+
+.menu-button{
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+   z-index: 1;
+    
+}
+
+.menu-icon, .menu-icon::before, .menu-icon::after{
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+    
+}
+
+.menu-icon::before{
+    transform: translate(-20px, -7px);
+}
+
+.menu-icon::after{
+    transform: translate(-20px, 7px);
+}
+
+/* Hambuger Animation */
+
+section:hover .menu-icon::before{
+    transform: rotate(-45deg) translate(-15px, -15px);
+}
+
+section:hover .menu-icon{
+    background-color: transparent;
+    
+}
+
+section:hover .menu-icon:after{
+    transform: rotate(45deg) translate(-14px, 15px);
+}
+
+.menu-icon{
+    display: block;
+}
+
+/* navigation */
+
+.mobile-nav{
+    position: fixed;
+    top:0;
+    left: 100%;
+    background-color: rgb(254, 252, 249);
+    width: 66%;
+    height: 100vh;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+section:hover .mobile-nav{
+    cursor: pointer;
+    left: 34%;
+
+}
+
+.mobile-nav-d{
+    display: none;
+}
+
+.mobile-nav ul{
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 8rem;    
+}
+
+.mobile-nav li{
+    padding: 10px;
+    margin-left: 20px;
+}
+
+
+.mobile-nav a{
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+    
+}
+
+.mobile-nav a:visited{
+   color: rgb(53, 52, 52);
+   
+}
+
+.mobile-nav a:hover, .mobile-nav a:focus{
+   color: tan;
+   transform: scale(1.2);  
+   transition: 0.3s ;
+}
+
+.mobile-nav a:active{
+   color: rgb(140 103 53);
+}
+
+/* background image */
+
+div.puzzle-img{
+    background-image: url(images/image-web-3-mobile.jpg);
+    width: 100%;
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* paragraphs */
+
+.words > p{
+    font-weight: 800;
+    font-size: 2.2rem;
+    padding: 13px 0;
+
+}
+
+.words article > p{
+    font-weight: 400;
+    font-size: 12px;
+    padding-bottom: 13px;
+    line-height: 19px;
+    color: hsl(236, 13%, 42%);
+
+}
+
+/* button */
+
+button.read-more{
+    padding: 12px 25px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color:  hsl(5, 85%, 63%);
+    border: none;
+    color: hsl(36, 100%, 99%);
+    letter-spacing: 3px;
+
+}
+
+button.read-more:hover{
+    background-color: hsl(240, 100%, 5%);
+    cursor: pointer;
+    transform: scale(0.9);  
+    transition: 0.3s ;
+}
+
+/* paragraphs contd */
+
+div.new{
+    background-color: hsl(240, 100%, 5%);
+    padding: 1rem 1rem 0 ;
+    margin: 3rem 0;
+    z-index: -1;
+    position: relative;
+}
+
+div.new h2{
+    font-weight: 700;
+    padding-bottom: 10px;
+    color: hsl(35, 77%, 62%);
+}
+
+div.new p:nth-child(even) a:any-link{
+    color: hsl(36, 100%, 99%);
+    padding: 1rem 0 8px;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+}
+
+ 
+div.new p:nth-child(even) a:hover, div.new p:nth-child(even) a:focus{
+    color: hsl(35, 77%, 62%);
+    transform: scale(1.1);  
+    transition: 0.3s ;
+ }
+ 
+div.new p:nth-child(even) a:active{
+    color: hsl(35, 65%, 35%);
+ }
+
+div.new p:nth-child(odd){
+    color: hsl(233, 8%, 79%) ;
+    font-size: 12px;
+    padding: 0 16px 1.2rem 0;
+    line-height: 23px;
+
+}
+
+hr{
+    border: 1px inset hsl(0, 0%, 45%);;
+}
+
+/* footer */
+
+footer{
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: -1;
+    
+}
+
+section.tech{
+    display: flex;
+    flex-flow: row;
+    gap: 1.1rem;
+    padding-bottom: 2rem;
+}
+
+div.img1, div.img2, div.img3{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    min-width: 85px;
+    min-height: 110px;
+}
+
+div.img1{
+    background-image: url(images/image-retro-pcs.jpg);
+
+}
+div.img2{
+    background-image: url(images/image-top-laptops.jpg);
+    
+}
+div.img3{
+    background-image: url(images/image-gaming-growth.jpg);
+    
+}
+
+section.tech h2{
+    color:hsl(233, 8%, 79%);
+    
+}
+
+footer p:nth-child(even) a:any-link{
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 7px;
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+}
+ 
+footer p:nth-child(even) a:hover,footer p:nth-child(even) a:focus{
+    color: hsl(5, 85%, 63%);
+    transform: scale(1.1);  
+    transition: 0.3s ;
+ }
+ 
+footer p:nth-child(even) a:active{
+    color:  hsl(5, 51%, 49%);
+ }
+
+footer p:nth-child(odd){
+    font-size: 13px;
+    line-height: 20px;
+    color:hsl(236, 13%, 42%);
+}
+
+@media (min-width:768px) {
+
+    body{
+        margin: 0 10rem;
+        justify-content: center;
+    }
+
+    header{
+        margin-bottom: 1rem;
+    }
+
+    .mobile-nav-d{
+        display: block;
+    }
+
+    .mobile-nav-d ul{
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+    }
+
+
+    
+    .mobile-nav-d li{
+        padding: 10px;
+        margin-left: 20px;
+    }
+    
+    
+    .mobile-nav-d a{
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 400;
+        color: black;
+        
+    }
+    
+    .mobile-nav-d a:visited{
+       color: rgb(53, 52, 52);
+       
+    }
+    
+    .mobile-nav-d a:hover, .mobile-nav-d a:focus{
+       color: tan;
+       transform: scale(1.2);  
+       transition: 0.3s ;
+    }
+    
+    .mobile-nav-d a:active{
+       color: rgb(140 103 53);
+    }
+    
+
+    .menu-button{
+        display: none;
+    }
+    .mobile-nav{
+        display: none;
+    }
+
+    main{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .web{
+        margin-right: 1.5rem;
+    }
+
+    div.puzzle-img{
+        background-image: url(images/image-web-3-desktop.jpg);
+        width: 100%;
+    }
+
+    main section{
+        display: flex;
+        flex-flow: row nowrap;
+        padding-top: 1.5rem;
+        gap: 4rem;
+    }
+    
+    .words > p{
+        padding: 0;
+    }
+
+    .words article >p{
+        font-size: 13px;
+        line-height: 22px;
+        padding-bottom: 2rem;
+    }
+    
+    div.new{
+        margin: 0;
+    }
+
+    footer{
+        flex-flow: row;
+        margin-bottom: 0;
+        margin-top: 3rem;
+    }
+
+    section.tech{
+        padding-bottom: 0;
+    }
+}
+
